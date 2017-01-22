@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<package name="login" namespace="/login" extends="json-default,struts-default">
+		<action name="regist_*" class="cn.yun.bbs.login.action.LogintAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/{1}.jsp</result>
+			<result name="registUI">/WEB-INF/bbs/user/regist.jsp</result>
+			<result name="success">/WEB-INF/bbs/login.jsp</result>  
+			<result name="checkAccount" type="json"/>
+			<result name="checkEmail" type="json"/>
+		</action>
+	</package>
+	
+</struts>
